@@ -1,4 +1,4 @@
-Code written while learning the basics of Micro-frontends with React
+Code written while learning the basics of Micro-frontends
 
 ## Resources:
 
