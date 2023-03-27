@@ -1,20 +1,25 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.scss";
+import Home from "./components/Home";
+import Navbar from "./components/Navbar";
+import React, { lazy, Suspense, useState, useEffect } from "react";
 
 function ContainerApp() {
   return (
-    <div className="topbar">
-      <div>
-        <h1>Container App</h1>
+    <BrowserRouter>
+      <Navbar />
 
-        <ul>
-          <li>Home</li>
-          <li>Dashboard</li>
-          <li>Orders</li>
-        </ul>
-      </div>
-
-      <button>Login</button>
-    </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route
+            path="/dashboard"
+            element={<div>Load dashboard app here...</div>}
+          />
+          <Route path="/orders" element={<div>Load order app here...</div>} />
+        </Routes>
+      </Suspense>
+    </BrowserRouter>
   );
 }
 
