@@ -13,7 +13,7 @@ export default defineConfig({
         dashboard: "dashboard@http://localhost:7202/remoteEntry.js",
         orders: "orders@http://localhost:7203/remoteEntry.js",
       },
-      shared: packageJson.dependencies,
+      shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
   server: { port: 7201 },

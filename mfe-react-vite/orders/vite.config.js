@@ -13,7 +13,7 @@ export default defineConfig({
       exposes: {
         "./OrdersApp": "./src/bootstrap",
       },
-      shared: packageJson.dependencies,
+      shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
   server: { port: 7203 },

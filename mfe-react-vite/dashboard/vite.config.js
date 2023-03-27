@@ -13,7 +13,7 @@ export default defineConfig({
       exposes: {
         "./DashboardApp": "./src/bootstrap",
       },
-      shared: packageJson.dependencies,
+      shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
   server: { port: 7202 },
