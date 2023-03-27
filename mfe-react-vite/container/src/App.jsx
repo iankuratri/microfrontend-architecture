@@ -16,7 +16,7 @@ function ContainerApp() {
             path="/dashboard"
             element={<div>Load dashboard app here...</div>}
           />
-          <Route path="/orders" element={<div>Load order app here...</div>} />
+          <Route path="/orders" element={<div>Load orders app here...</div>} />
         </Routes>
       </Suspense>
     </BrowserRouter>
