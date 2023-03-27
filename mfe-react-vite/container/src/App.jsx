@@ -3,6 +3,7 @@ import "./App.scss";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
 import React, { lazy, Suspense, useState, useEffect } from "react";
+import DashboardApp from "./components/DashboardApp";
 
 function ContainerApp() {
   return (
@@ -12,10 +13,7 @@ function ContainerApp() {
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route path="/" exact element={<Home />} />
-          <Route
-            path="/dashboard"
-            element={<div>Load dashboard app here...</div>}
-          />
+          <Route path="/dashboard" element={<DashboardApp />} />
           <Route path="/orders" element={<div>Load orders app here...</div>} />
         </Routes>
       </Suspense>
