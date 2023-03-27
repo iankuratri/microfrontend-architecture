@@ -17,7 +17,7 @@ export default defineConfig({
       shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
-  server: { port: PORT },
+  server: { port: PORT, strictPort: true },
   preview: {
     host: "localhost",
     port: PORT,
