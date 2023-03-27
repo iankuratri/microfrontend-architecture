@@ -1,7 +1,8 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
-const packageJson = require("./package.json");
+
+const PORT = 7203;
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -16,5 +17,16 @@ export default defineConfig({
       shared: ["react", "react-dom", "react-router-dom"],
     }),
   ],
-  server: { port: 7203 },
+  server: { port: PORT },
+  preview: {
+    host: "localhost",
+    port: PORT,
+    strictPort: true,
+  },
+  build: {
+    modulePreload: false,
+    target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
+  },
 });

@@ -10,8 +10,8 @@ export default defineConfig({
     federation({
       name: "container",
       remotes: {
-        dashboard: "dashboard@http://localhost:7202/remoteEntry.js",
-        orders: "orders@http://localhost:7203/remoteEntry.js",
+        dashboard: "dashboard@http://localhost:7202/assets/remoteEntry.js",
+        orders: "orders@http://localhost:7203/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom", "react-router-dom"],
     }),
