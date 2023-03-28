@@ -14,7 +14,7 @@ export default defineConfig({
       exposes: {
         "./DashboardApp": "./src/bootstrap",
       },
-      shared: ["react", "react-dom", "react-router-dom"],
+      shared: ["react", "react-dom"],
     }),
   ],
   server: { port: PORT, strictPort: true },
