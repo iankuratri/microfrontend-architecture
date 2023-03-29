@@ -19,5 +19,15 @@ export default defineConfig({
     }),
   ],
   server: { port: PORT, strictPort: true },
-  build: { sourcemap: true },
+  preview: {
+    host: "localhost",
+    port: PORT,
+    strictPort: true,
+  },
+  build: {
+    modulePreload: false,
+    target: "esnext",
+    minify: false,
+    cssCodeSplit: false,
+  },
 });

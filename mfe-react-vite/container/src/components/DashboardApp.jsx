@@ -1,15 +1,3 @@
-import mount from "dashboard/DashboardApp";
-import React, { useRef, useEffect } from "react";
+import DashboardApp from "dashboard/DashboardApp";
 
-export default () => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    mount({
-      container: ref.current,
-      standalone: false,
-    });
-  }, []);
-
-  return <div id="_dashboardApp_root" ref={ref} />;
-};
+export default () => <DashboardApp standalone={false} />;

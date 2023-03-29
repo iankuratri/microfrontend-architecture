@@ -1,15 +1,3 @@
-import mount from "orders/OrdersApp";
-import React, { useRef, useEffect } from "react";
+import OrdersApp from "orders/OrdersApp";
 
-export default () => {
-  const ref = useRef(null);
-
-  useEffect(() => {
-    mount({
-      container: ref.current,
-      standalone: false,
-    });
-  }, []);
-
-  return <div id="_ordersApp_root" ref={ref} />;
-};
+export default () => <OrdersApp standalone={false} />;
