@@ -1,7 +1,7 @@
 import React from "react";
 import "./Home.scss";
 
-const Home = () => {
+const Home = ({ user }) => {
   return (
     <div className="ho-container">
       <h1>Home App</h1>
@@ -11,6 +11,10 @@ const Home = () => {
         perferendis cumque minima quasi sapiente reprehenderit aut quisquam
         necessitatibus voluptatem nisi.
       </p>
+
+      <br />
+
+      {user && <p>Logged in as {user.name}!</p>}
     </div>
   );
 };

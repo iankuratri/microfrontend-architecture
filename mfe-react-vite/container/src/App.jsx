@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.scss";
 import Home from "./components/Home";
@@ -8,14 +8,19 @@ const DashboardAppLazy = lazy(() => import("./components/DashboardApp"));
 const OrdersAppLazy = lazy(() => import("./components/OrdersApp"));
 
 function ContainerApp() {
+  const [user, setUser] = useState(null);
+
   return (
     <>
-      <Navbar />
+      <Navbar user={user} setUser={setUser} />
 
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/dashboard/*" element={<DashboardAppLazy />} />
+          <Route path="/" exact element={<Home user={user} />} />
+          <Route
+            path="/dashboard/*"
+            element={<DashboardAppLazy user={user} />}
+          />
           <Route path="/orders/*" element={<OrdersAppLazy />} />
         </Routes>
       </Suspense>

@@ -1,7 +1,7 @@
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
-function DashboardApp() {
+function DashboardApp({ user }) {
   return (
     <div className="db-container">
       <h1>Dashboard App</h1>
@@ -27,6 +27,10 @@ function DashboardApp() {
         <Route path="page-1" element={<p>This is Page 1</p>} />
         <Route path="page-2" element={<p>This is Page 2</p>} />
       </Routes>
+
+      <br />
+
+      {user && <p>Logged in as {user.name}!</p>}
     </div>
   );
 }

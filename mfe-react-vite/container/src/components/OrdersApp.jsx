@@ -1,3 +1,3 @@
-import OrdersApp from "orders/OrdersApp";
+import mountOrdersApp from "orders/OrdersApp";
 
-export default () => <OrdersApp standalone={false} />;
+export default () => mountOrdersApp({ standalone: false });

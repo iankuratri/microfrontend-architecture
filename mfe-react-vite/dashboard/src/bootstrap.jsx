@@ -5,7 +5,7 @@ import App from "./App";
 import "./index.css";
 
 // Function to mount the App
-export default ({ standalone }) => {
+export default ({ standalone, user }) => {
   if (standalone) {
     const container = document.getElementById("_dashboardApp_root");
 
@@ -17,6 +17,6 @@ export default ({ standalone }) => {
       </React.StrictMode>
     );
   } else {
-    return <App standalone={standalone} />;
+    return <App standalone={standalone} user={user} />;
   }
 };

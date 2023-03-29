@@ -2,7 +2,7 @@ import React from "react";
 import "./Navbar.scss";
 import { NavLink } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ user, setUser }) => {
   return (
     <div className="topbar">
       <div>
@@ -21,7 +21,13 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <button>Login</button>
+      {user ? (
+        <button onClick={() => setUser(null)}>Logout</button>
+      ) : (
+        <button onClick={() => setUser({ name: "Superman", age: 35 })}>
+          Login
+        </button>
+      )}
     </div>
   );
 };
