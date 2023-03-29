@@ -1,1 +1,2 @@
-import("./bootstrap");
+import mount from "./bootstrap";
+mount();

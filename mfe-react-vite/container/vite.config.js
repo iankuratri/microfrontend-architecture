@@ -11,11 +11,12 @@ export default defineConfig({
     federation({
       name: "container",
       remotes: {
-        dashboard: "dashboard@http://localhost:7202/assets/remoteEntry.js",
-        orders: "orders@http://localhost:7203/assets/remoteEntry.js",
+        dashboard: "http://localhost:7202/assets/remoteEntry.js",
+        orders: "http://localhost:7203/assets/remoteEntry.js",
       },
       shared: ["react", "react-dom"],
     }),
   ],
   server: { port: PORT, strictPort: true },
+  build: { sourcemap: true },
 });

@@ -28,5 +28,6 @@ export default defineConfig({
     target: "esnext",
     minify: false,
     cssCodeSplit: false,
+    sourcemap: true,
   },
 });
