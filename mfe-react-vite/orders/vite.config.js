@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
+const packageJson = require("./package.json");
 
 const PORT = 7203;
 
@@ -14,7 +15,7 @@ export default defineConfig({
       exposes: {
         "./OrdersApp": "./src/bootstrap",
       },
-      shared: ["react", "react-dom"],
+      shared: packageJson.dependencies,
     }),
   ],
   server: { port: PORT, strictPort: true },

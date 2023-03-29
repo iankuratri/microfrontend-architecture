@@ -1,6 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import federation from "@originjs/vite-plugin-federation";
+const packageJson = require("./package.json");
 
 const PORT = 7201;
 
@@ -14,7 +15,7 @@ export default defineConfig({
         dashboard: "http://localhost:7202/assets/remoteEntry.js",
         orders: "http://localhost:7203/assets/remoteEntry.js",
       },
-      shared: ["react", "react-dom"],
+      shared: packageJson.dependencies,
     }),
   ],
   server: { port: PORT, strictPort: true },
