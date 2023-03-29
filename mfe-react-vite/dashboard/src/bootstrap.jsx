@@ -4,10 +4,7 @@ import App from "./App";
 import "./index.css";
 
 // Function to mount the App
-export default ({
-  container = document.getElementById("_dashboardApp_root"),
-  standalone = true,
-}) => {
+export default ({ container, standalone }) => {
   ReactDOM.createRoot(container).render(
     <React.StrictMode>
       <App standalone={standalone} />
