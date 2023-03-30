@@ -16,7 +16,7 @@ function ContainerApp() {
 
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" exact element={<Home user={user} />} />
+          <Route path="/*" exact element={<Home user={user} />} />
           <Route
             path="/dashboard/*"
             element={<DashboardAppLazy user={user} />}
