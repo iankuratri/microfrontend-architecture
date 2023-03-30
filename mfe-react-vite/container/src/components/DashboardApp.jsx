@@ -1,3 +1,3 @@
-import mountDashboardApp from "dashboard/DashboardApp";
+import DashboardApp from "dashboard/DashboardApp";
 
-export default ({ user }) => mountDashboardApp({ standalone: false, user });
+export default ({ user }) => DashboardApp({ standalone: false, user });
