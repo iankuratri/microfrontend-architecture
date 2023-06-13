@@ -1,4 +1,4 @@
-Code written while learning the basics of Micro-frontends
+Code written while learning the fundamentals of Micro-frontends
 
 ## Resources:
 
