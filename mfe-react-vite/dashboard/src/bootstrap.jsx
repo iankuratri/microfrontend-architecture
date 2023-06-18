@@ -1,22 +1,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./index.css";
+import DynamicRouter from "./routing/DynamicRouter";
 
 // Function to mount the App
-export default ({ standalone, user }) => {
-  if (standalone) {
-    const container = document.getElementById("_dashboardApp_root");
+export default ({
+  standalone,
+  mountPoint,
+  initialPathname,
+  routingStrategy,
+  user,
+}) => {
+  const root = ReactDOM.createRoot(mountPoint);
 
-    ReactDOM.createRoot(container).render(
-      <React.StrictMode>
-        <BrowserRouter>
-          <App standalone={standalone} />
-        </BrowserRouter>
-      </React.StrictMode>
-    );
-  } else {
-    return <App standalone={standalone} user={user} />;
-  }
+  root.render(
+    <React.StrictMode>
+      <DynamicRouter
+        routingStrategy={routingStrategy}
+        initialPathname={initialPathname}
+      >
+        <App standalone={standalone} user={user} />
+      </DynamicRouter>
+    </React.StrictMode>
+  );
+
+  return root;
 };

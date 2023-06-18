@@ -1,3 +1,8 @@
-import mount from "./bootstrap";
+import mountApp from "./bootstrap";
 
-mount({ standalone: true });
+mountApp({
+  standalone: true,
+  mountPoint: document.getElementById("_dashboardApp_root"),
+  initialPathname: "/",
+  routingStrategy: "browser",
+});

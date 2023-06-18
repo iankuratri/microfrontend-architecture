@@ -2,7 +2,7 @@ import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import "./App.scss";
 
-function DashboardApp({ user }) {
+function DashboardApp({ user, standalone }) {
   return (
     <div className="db-container">
       <h1>Dashboard App</h1>
