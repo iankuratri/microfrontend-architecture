@@ -21,7 +21,7 @@ function ContainerApp({ standalone }) {
             path="/dashboard/*"
             element={<DashboardAppLazy user={user} />}
           />
-          {/* <Route path="/orders/*" element={<OrdersAppLazy user={user} />} /> */}
+          <Route path="/orders/*" element={<OrdersAppLazy user={user} />} />
         </Routes>
       </Suspense>
     </>

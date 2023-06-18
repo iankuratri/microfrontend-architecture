@@ -1,7 +1,7 @@
 import { Route, Routes, Link } from "react-router-dom";
 import "./App.scss";
 
-function OrderApp() {
+function OrderApp({ user, standalone }) {
   return (
     <div className="od-container">
       <h1>Order App</h1>
@@ -27,6 +27,10 @@ function OrderApp() {
         <Route path="page-1" element={<p>This is Page 1</p>} />
         <Route path="page-2" element={<p>This is Page 2</p>} />
       </Routes>
+
+      <br />
+
+      {user && <p>Logged in as {user.name}!</p>}
     </div>
   );
 }
