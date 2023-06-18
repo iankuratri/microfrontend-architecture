@@ -5,4 +5,5 @@ mountApp({
   mountPoint: document.getElementById("_dashboardApp_root"),
   initialPathname: "/",
   routingStrategy: "browser",
+  user: null,
 });

@@ -5,7 +5,7 @@ import "./Home.scss";
 const Home = ({ user }) => {
   return (
     <div className="ho-container">
-      <h1>Home component inside Container App</h1>
+      <h1>Home Component inside Container App</h1>
       <br />
 
       <ul>
