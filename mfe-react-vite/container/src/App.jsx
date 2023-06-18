@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 const DashboardAppLazy = lazy(() => import("./components/DashboardApp"));
 const OrdersAppLazy = lazy(() => import("./components/OrdersApp"));
 
-function ContainerApp() {
+function ContainerApp({ standalone }) {
   const [user, setUser] = useState(null);
 
   return (
@@ -21,7 +21,7 @@ function ContainerApp() {
             path="/dashboard/*"
             element={<DashboardAppLazy user={user} />}
           />
-          <Route path="/orders/*" element={<OrdersAppLazy />} />
+          {/* <Route path="/orders/*" element={<OrdersAppLazy user={user} />} /> */}
         </Routes>
       </Suspense>
     </>

@@ -1,3 +1,6 @@
-import mount from "./bootstrap";
+import mountApp from "./bootstrap";
 
-mount();
+mountApp({
+  standalone: true,
+  mountPoint: document.getElementById("_containerApp_root"),
+});

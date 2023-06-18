@@ -5,13 +5,11 @@ import App from "./App";
 import "./index.css";
 
 // Function to mount the App
-export default () => {
-  const container = document.getElementById("_containerApp_root");
-
-  ReactDOM.createRoot(container).render(
+export default ({ standalone, mountPoint }) => {
+  ReactDOM.createRoot(mountPoint).render(
     <React.StrictMode>
       <BrowserRouter>
-        <App />
+        <App standalone={standalone} />
       </BrowserRouter>
     </React.StrictMode>
   );
