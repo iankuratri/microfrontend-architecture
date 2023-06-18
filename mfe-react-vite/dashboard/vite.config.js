@@ -1,7 +1,6 @@
 import federation from "@originjs/vite-plugin-federation";
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-const packageJson = require("./package.json");
 
 const PORT = 7202;
 
@@ -15,15 +14,10 @@ export default defineConfig({
       exposes: {
         "./DashboardApp": "./src/bootstrap",
       },
-      shared: packageJson.dependencies,
     }),
   ],
   server: { port: PORT, strictPort: true },
-  preview: {
-    host: "localhost",
-    port: PORT,
-    strictPort: true,
-  },
+  preview: { port: PORT, strictPort: true },
   build: {
     modulePreload: false,
     target: "esnext",
